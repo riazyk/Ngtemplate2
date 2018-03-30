@@ -1,0 +1,161 @@
+.topbar {
+  width: 100%;
+  /* overflow: hidden; */
+  background-color: rgb(243 244 246);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  position: relative;
+}
+
+.topbar__logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.topbar__logo {
+  height: 41px;
+  margin-left: 45px;
+  margin-top: 3px;
+  margin-right: 20px;
+}
+
+.topbar__search input {
+  width: 175px;
+  margin-right: 15px;
+  padding-right: 25px;
+  font-size: 14px;
+}
+
+.topbar__avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  margin-left: 15px;
+}
+
+.topbar_username {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0053A0;
+}
+
+.topbar__hamburgerWrap {
+  flex-grow: 1;
+}
+
+.topbar__hamburger {
+  margin-left: 20px;
+  color: #0053A0;
+}
+
+.topbar__search {
+  position: relative;
+}
+
+.topbar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.fa-search {
+  font-size: 18px;
+  color: grey;
+  position: absolute;
+  right: 21px;
+  top: 4px;
+}
+
+.fa-1x {
+  display: none;
+}
+
+.topbar_arrowDown {
+  background-color: rgb(243 244 246);
+  color: #0053A0;
+  border: none;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  position: absolute;
+  width: 320px;
+  height: 100%;
+  top: 0;
+  left: -600px;
+  background-color: rgb(243 244 246);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+  /* background-color: red; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding-top: 55px;
+  z-index: 9;
+}
+
+.color {
+  left: 0;
+  transition: all 0.4s;
+}
+
+.sidebar__head--color {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0053A0;
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 640px) {
+  .topbar__logo {
+    margin-right: 0;
+    margin-left: 14px;
+  }
+  .topbar__search input {
+    width: 115px;
+  }
+  .topbar_arrowDown {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .topbar__logo {
+    margin-left: 12px;
+    ;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .topbar_username {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .topbar__logo {
+    height: 35px;
+  }
+  .topbar__avatar {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .topbar__avatar {
+    display: none;
+  }
+  .topbar__search input {
+    margin-right: 0;
+  }
+}
+

@@ -1,0 +1,65 @@
+.userProfile__wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  height: 100%;
+  overflow: auto;
+
+  width: 100%;
+}
+
+.userProfile {
+  width: 860px;
+  height: auto;
+  
+}
+
+.userProfile__note {
+  font-size: 12px;
+  font-weight: bold;
+  color: #0053A0;
+  text-align: center;
+}
+
+.ui-message {
+  position: absolute;
+  right: 3%;
+  background-color: #fff !important;
+  border: none !important;
+  margin-top: 2px !important;
+  height: 25px;
+}
+
+.relative {
+  position: relative;
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 640px) {
+  .ui-message {
+    top: 30px;
+  }
+}
+
+
+
+
+
+
+/* .bodyWrap {
+  display: flex;
+}
+
+.sbar{
+  width: 200px;
+  background: violet;
+  height: 900px;
+}
+
+@media screen and (max-width: 320px) {
+  .sbar {
+    position: absolute;
+    z-index: 500;
+  }
+} */

@@ -1,0 +1,240 @@
+<!-- <div class="bodyWrap">
+<div class="sbar">
+    <p-menu [model]="items2"></p-menu>
+</div> -->
+
+<div class="userProfile__wrap">
+  <div class="userProfile">
+    <p-growl [value]="msgs" sticky="sticky"></p-growl>
+
+    <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+      <p-panel header="Новый сотрудник">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+
+          <div class="ui-grid-row relative">
+            <div class="ui-grid-col-3">
+              Имя*:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" pInputText [pKeyFilter]="ccRegex1" [pValidateOnly]="true" formControlName="firstname" placeholder="Имя" />
+            </div>
+            <div>
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty">
+                <i class="fa fa-exclamation"></i>
+                Поле не заполнено
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row relative">
+            <div class="ui-grid-col-3">
+              Фамилия*:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" pInputText [pKeyFilter]="ccRegex5" [pValidateOnly]="true" formControlName="lastname" placeholder="Фамилия" />
+            </div>
+            <div>
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['lastname'].valid&&userform.controls['lastname'].dirty">
+                <i class="fa fa-exclamation"></i>
+                Поле не заполнено
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Отчество:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" formControlName="middlename" placeholder="Отчество" />
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row relative">
+            <div class="ui-grid-col-3">
+              Имя (eng)*:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" pInputText [pKeyFilter]="ccRegex3" [pValidateOnly]="true" formControlName="firstnameEng" placeholder="First Name" />
+            </div>
+            <div>
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['firstnameEng'].valid&&userform.controls['firstnameEng'].dirty">
+                <i class="fa fa-exclamation"></i>
+                Поле не заполнено
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row relative">
+            <div class="ui-grid-col-3">
+              Фамилия (eng)*:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" pInputText [pKeyFilter]="ccRegex4" [pValidateOnly]="true" formControlName="lastnameEng" placeholder="Last Name" />
+            </div>
+            <div>
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['lastnameEng'].valid&&userform.controls['lastnameEng'].dirty">
+                <i class="fa fa-exclamation"></i>
+                Поле не заполнено
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Отчество (eng):
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" formControlName="middlenameEng" placeholder="Middle Name" />
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Отдел:
+            </div>
+            <div class="ui-grid-col-9">
+              <p-dropdown [options]="departments" formControlName="department" [autoWidth]="false"></p-dropdown>
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Должность:
+            </div>
+            <div class="ui-grid-col-9">
+              <p-dropdown [options]="positions" formControlName="position" [autoWidth]="false"></p-dropdown>
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Регион:
+            </div>
+            <div class="ui-grid-col-9">
+              <p-dropdown [options]="regions" formControlName="region" [autoWidth]="false"></p-dropdown>
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Город:
+            </div>
+            <div class="ui-grid-col-9">
+              <p-dropdown [options]="cities" formControlName="city" [autoWidth]="false"></p-dropdown>
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Улица:
+            </div>
+            <div class="ui-grid-col-9">
+              <p-dropdown [options]="streets" formControlName="street" [autoWidth]="false"></p-dropdown>
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Рабочее место:
+            </div>
+            <div class="ui-grid-col-9">
+              <p-dropdown [options]="locations" formControlName="location" [autoWidth]="false"></p-dropdown>
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row relative">
+            <div class="ui-grid-col-3">
+              Корпоративный мобильный номер*:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" pInputText [pKeyFilter]="ccRegex2" [pValidateOnly]="true" formControlName="corpCellPhone" placeholder="Формат: 099-999-99-99" />
+            </div>
+            <div>
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['corpCellPhone'].valid&&userform.controls['corpCellPhone'].dirty">
+                <i class="fa fa-exclamation"></i>
+                Поле не заполнено
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row relative">
+            <div class="ui-grid-col-3">
+              Мобильный номер*:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" pInputText [pKeyFilter]="ccRegex2" [pValidateOnly]="true" formControlName="cellPhone" placeholder="Формат: 099-999-99-99" />
+            </div>
+            <div>
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['cellPhone'].valid&&userform.controls['cellPhone'].dirty">
+                <i class="fa fa-exclamation"></i>
+                Поле не заполнено
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Рабочий стационарный телефон:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" formControlName="corpWaredPhone" />
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3">
+              Домашний телефон:
+            </div>
+            <div class="ui-grid-col-9">
+              <input pInputText type="text" formControlName="homePhone" />
+            </div>
+            <div>
+            </div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3"></div>
+            <div class="ui-grid-col-9 userProfile__note">*- Поля обязательные для заполнения</div>
+            <div></div>
+          </div>
+
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-3"></div>
+            <div class="ui-grid-col-9">
+              <button pButton type="submit" label="Сохранить" [disabled]="!userform.valid"></button>
+            </div>
+            <div></div>
+          </div>
+          <!-- <div style="text-align:center;margin-top:20px" *ngIf="submitted">
+            JSON
+            <br> {{diagnostic}}
+          </div> -->
+        </div>
+      </p-panel>
+    </form>
+
+  </div>
+</div>
+
+
+<!-- </div> -->
