@@ -51,6 +51,7 @@
 .topbar__hamburger {
   margin-left: 20px;
   color: #0053A0;
+  display: none;
 }
 
 .topbar__search {
@@ -102,9 +103,11 @@
   z-index: 9;
 }
 
-.color {
+.visible {
+  /* display: block; */
   left: 0;
   transition: all 0.4s;
+  outline: 3px solid red;
 }
 
 .sidebar__head--color {
@@ -125,6 +128,9 @@
   }
   .topbar_arrowDown {
     margin-right: 0;
+  }
+  .topbar__hamburger {
+    display: block;
   }
 }
 
@@ -158,4 +164,3 @@
     margin-right: 0;
   }
 }
-

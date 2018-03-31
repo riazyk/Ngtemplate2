@@ -17,7 +17,7 @@ export class TopbarComponent implements OnInit {
 
     showSideMenu () {
         var sidebar = document.getElementById('bar');
-        sidebar.classList.toggle('color');
+        sidebar.classList.toggle('visible');
     }
 
     ngOnInit() {
