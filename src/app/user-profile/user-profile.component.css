@@ -1,17 +1,20 @@
+.bodyWrap {
+  display: flex;
+}
+
 .userProfile__wrap {
   display: flex;
   justify-content: center;
   padding-top: 50px;
   height: 100%;
   overflow: auto;
-
+  /* outline: 1px solid red; */
   width: 100%;
 }
 
 .userProfile {
   width: 860px;
   height: auto;
-  
 }
 
 .userProfile__note {
@@ -42,24 +45,26 @@
   }
 }
 
+/* Sidebar */
 
-
-
-
-
-/* .bodyWrap {
+.sidebar {
+  width: 300px;
+  background-color: rgb(243 244 246);
+  height: 900px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.sbar{
-  width: 200px;
-  background: violet;
-  height: 900px;
+.sidebar--color {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0053A0;
 }
 
 @media screen and (max-width: 320px) {
-  .sbar {
+  .sidebar {
     position: absolute;
-    z-index: 500;
+    
   }
-} */
+}
