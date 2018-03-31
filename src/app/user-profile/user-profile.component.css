@@ -1,5 +1,6 @@
 .bodyWrap {
   display: flex;
+  position: relative;
 }
 
 .userProfile__wrap {
@@ -36,18 +37,12 @@
   position: relative;
 }
 
-/*Media Queries*/
 
-@media screen and (max-width: 640px) {
-  .ui-message {
-    top: 30px;
-  }
-}
+/* ---------- Sidebar ---------- */
 
-/* Sidebar */
 
 .sidebar {
-  width: 300px;
+  width: 320px;
   background-color: rgb(243 244 246);
   height: 900px;
   display: flex;
@@ -64,11 +59,19 @@
   color: #0053A0;
 }
 
+
+/*---------- Media Queries ----------*/
+
+
 @media screen and (max-width: 640px) {
+  .ui-message {
+    top: 30px;
+  }
   .sidebar {
     position: absolute;
     z-index: 9;
     left: -600px;
+    height: 100%;
   }
   .userProfile__wrap {
     padding-top: 10px;
@@ -77,6 +80,7 @@
     margin: 0 5px 0 5px;
   }
 }
+
 
 .visible {
   left: 0;
